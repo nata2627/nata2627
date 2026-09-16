@@ -38,8 +38,11 @@
 **[anglicism_detection](https://github.com/nata2627/anglicism_detection)** — гибридная модель детекции и замены англицизмов. Магистерская работа: парсинг корпуса, разметка, сравнение классических алгоритмов с трансформерами (RuRoBERTa-large, XLM-RoBERTa), дообучение Qwen, оценка по BLEU/ROUGE.
 `PyTorch` `transformers` `XGBoost` `natasha` `hydra`
 
-**[rbc.ru-category-classification](https://github.com/nata2627/rbc.ru-category-classification)** — собственный парсер РБК и многоклассовая классификация новостей по рубрикам.
-`Jupyter` `scikit-learn` `BeautifulSoup`
+**[rbc.ru-category-classification](https://github.com/nata2627/rbc.ru-category-classification)** — классификация новостей РБК по семи рубрикам. Собственный парсер, 8142 статьи, сравнение четырёх архитектур. Лучшей оказалась самая простая: рубрика определяется словарём, а не порядком слов.
+`TensorFlow` `scikit-learn` `BeautifulSoup`
+
+**[anglicism_detection — детекция ИИ-текста](https://github.com/nata2627/anglicism_detection)** — исследование отличимости машинно-сгенерированного текста на русском: собственный корпус 5080 документов (37 млн знаков), XLM-RoBERTa, ROC-AUC 0.906. Главная находка — детектор выучивает синтаксис, а не лексику: при замене синонимами пропускается 60% машинных фрагментов.
+`PyTorch` `transformers` `llama.cpp` `pymorphy3`
 
 **[pabd24](https://github.com/nata2627/pabd24)** — учебный проект по прикладному анализу больших данных: полный ML-цикл от парсинга ЦИАН до сервиса предсказания цен. DVC, S3, Docker, тесты.
 `DVC` `Docker` `S3` `Flask`
