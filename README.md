@@ -14,6 +14,8 @@
 
 **Эконометрика и финансы.** Панельные данные, временные ряды (ARIMA/GARCH), модели бинарного выбора, проверка гипотез, A/B-тесты. Оценка бизнеса методом DCF с самостоятельным обоснованием ставок дисконтирования, сравнительный подход на мультипликаторах, фундаментальный и технический анализ акций.
 
+**Данные и SQL.** Проектирование схем, ETL, аналитические витрины на PostgreSQL: оконные функции, оптимизация по плану запроса, дашборды.
+
 **Открытый код.** Контрибьютор фреймворков для работы с языковыми моделями.
 
 ---
@@ -30,6 +32,9 @@
 
 ### Избранные репозитории
 
+**[moex-market-analytics](https://github.com/nata2627/moex-market-analytics)** — витрина аналитики российского фондового рынка на данных Московской биржи. Вся аналитика в SQL: оконные функции, CTE, материализованные представления, оптимизация по плану запроса. 46 бумаг, 47 672 строки котировок, архитектура `staging → core → marts`, дашборд в Metabase.
+`PostgreSQL` `SQL` `Docker` `Metabase` `ETL`
+
 **[anglicism_detection](https://github.com/nata2627/anglicism_detection)** — гибридная модель детекции и замены англицизмов. Магистерская работа: парсинг корпуса, разметка, сравнение классических алгоритмов с трансформерами (RuRoBERTa-large, XLM-RoBERTa), дообучение Qwen, оценка по BLEU/ROUGE.
 `PyTorch` `transformers` `XGBoost` `natasha` `hydra`
 
@@ -39,8 +44,8 @@
 **[pabd24](https://github.com/nata2627/pabd24)** — учебный проект по прикладному анализу больших данных: полный ML-цикл от парсинга ЦИАН до сервиса предсказания цен. DVC, S3, Docker, тесты.
 `DVC` `Docker` `S3` `Flask`
 
-**[gbd](https://github.com/nata2627/gbd)** — реализации графовых алгоритмов и анализ графов.
-`Python` `networkx`
+**[gbd](https://github.com/nata2627/gbd)** — машинное обучение на графах: метрики, эмбеддинги вершин, предсказание свойств вершин на `ogbn-arxiv` (Open Graph Benchmark).
+`Python` `networkx` `ogb`
 
 **[rasa_bot](https://github.com/nata2627/rasa_bot)** — диалоговый бот на Rasa: интенты, домен, кастомные actions, тесты.
 `Rasa` `Python`
@@ -49,7 +54,7 @@
 
 ### Стек
 
-**Языки** Python · R · SQL · LaTeX
+**Языки** Python · SQL · R · LaTeX
 
 **Данные и ML** pandas · numpy · statsmodels · scikit-learn · XGBoost · matplotlib · seaborn
 
@@ -59,7 +64,9 @@
 
 **Финансы** DCF · мультипликаторы · оценка бизнеса · фундаментальный и технический анализ
 
-**Инструменты** Git · Jupyter · Docker · DVC · S3 · FastAPI · MongoDB · ArangoDB · Excel
+**Базы данных** PostgreSQL · оконные функции и рамки окна · CTE · материализованные представления · индексы и `EXPLAIN ANALYZE` · MongoDB · ArangoDB · графовые БД
+
+**Инструменты** Git · Jupyter · Docker · Docker Compose · Metabase · DVC · S3 · FastAPI · Excel
 
 ---
 
