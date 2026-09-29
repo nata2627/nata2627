@@ -18,7 +18,7 @@
 
 **Данные и SQL.** Проектирование схем, ETL, аналитические витрины на PostgreSQL: оконные функции, оптимизация по плану запроса, дашборды.
 
-**Открытый код.** Контрибьютор фреймворков для оценки языковых моделей и RAG: три принятых pull request, ещё восемь на ревью.
+**Открытый код.** Контрибьютор фреймворков для оценки языковых моделей и RAG: четыре принятых pull request, ещё пять на ревью.
 
 ---
 
@@ -27,9 +27,8 @@
 | Проект | Что это | Вклад |
 |---|---|---|
 | [EleutherAI/lm-evaluation-harness](https://github.com/EleutherAI/lm-evaluation-harness/pulls?q=author%3Anata2627) | Референсный фреймворк оценки языковых моделей | 2 PR приняты, 3 на ревью |
-| [comet-ml/opik](https://github.com/comet-ml/opik/pulls?q=author%3Anata2627) | Платформа оценки и трассировки LLM-приложений | 1 PR принят, 1 на ревью |
-| [run-llama/llama_index](https://github.com/run-llama/llama_index/pulls?q=author%3Anata2627) | Фреймворк для RAG и документных агентов | 3 PR на ревью |
-| [deepset-ai/haystack](https://github.com/deepset-ai/haystack/pulls?q=author%3Anata2627) | Оркестрация LLM-пайплайнов | 1 PR на ревью |
+| [comet-ml/opik](https://github.com/comet-ml/opik/pulls?q=author%3Anata2627) | Платформа оценки и трассировки LLM-приложений | 2 PR приняты |
+| [run-llama/llama_index](https://github.com/run-llama/llama_index/pulls?q=author%3Anata2627) | Фреймворк для RAG и документных агентов | 2 PR на ревью |
 
 ---
 
