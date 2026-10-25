@@ -62,17 +62,19 @@ Also [pabd24](https://github.com/nata2627/pabd24) (course ML service for price p
 
 **Languages** Python · SQL · R · LaTeX
 
-**Data and ML** pandas · numpy · statsmodels · scikit-learn · XGBoost · CatBoost · conformal prediction · MLflow · survival analysis · entity resolution
+**Data and ML** pandas · numpy · statsmodels · scikit-learn · XGBoost · CatBoost · conformal prediction · MLflow · survival analysis (Kaplan-Meier) · entity resolution · graph ML (networkx, node embeddings) · matplotlib · seaborn · Jupyter
 
 **Time series** ETS · SARIMA · STL · rolling-origin backtesting · price indices
 
-**NLP and LLM** PyTorch · TensorFlow · transformers · sentence-transformers · LLM fine-tuning and quantization · BM25, hybrid search and cross-encoders · retrieval and generation evaluation
+**NLP and LLM** PyTorch · TensorFlow · transformers · datasets · accelerate · sentence-transformers · LLM fine-tuning and quantization (bitsandbytes, auto-gptq) · BM25, hybrid search and cross-encoders · retrieval and generation evaluation (NDCG, BLEU, ROUGE) · lm-evaluation-harness · LlamaIndex · Haystack · spaCy · nltk · natasha · Rasa
 
-**Econometrics and causal inference** OLS with assumption diagnostics · logit and probit · CAPM · event study · difference-in-differences with fixed effects · matching · randomization inference · clustered standard errors · multiple testing corrections
+**Econometrics and causal inference** OLS with assumption diagnostics (autocorrelation, heteroskedasticity, multicollinearity) · hypothesis testing · hedonic regression · linear probability and hazard models · logit and probit · CAPM and beta · event study · difference-in-differences with fixed effects · matching · randomization inference and placebo tests · clustered standard errors · multiple testing corrections (Holm, Benjamini-Hochberg)
 
 **Finance** DCF · multiples · fundamental and technical analysis
 
-**Data and infrastructure** PostgreSQL · ClickHouse · dbt · Airflow · FastAPI · Docker · GitHub Actions · Playwright · Qdrant · FAISS · Metabase · D3 · DVC · Excel
+**SQL** window functions · CTE · materialized views · indexes and `EXPLAIN ANALYZE` · statistical aggregates
+
+**Data and infrastructure** PostgreSQL · ClickHouse · MongoDB · Neo4j · ArangoDB · dbt · Airflow · FastAPI · Docker · Docker Compose · GitHub Actions · pytest · locust · Playwright · BeautifulSoup · Qdrant · FAISS · Metabase · Yandex DataLens · D3 · DVC · S3 · Render · Telegram Bot API · GigaChat API · Git · Excel
 
 ---
 
@@ -153,17 +155,19 @@ Titles are translated, the papers are in Russian.
 
 **Языки** Python · SQL · R · LaTeX
 
-**Данные и ML** pandas · numpy · statsmodels · scikit-learn · XGBoost · CatBoost · конформные интервалы · MLflow · анализ выживаемости · дедупликация объектов
+**Данные и ML** pandas · numpy · statsmodels · scikit-learn · XGBoost · CatBoost · конформные интервалы · MLflow · анализ выживаемости (Каплан-Мейер) · дедупликация объектов · ML на графах (networkx, эмбеддинги вершин) · matplotlib · seaborn · Jupyter
 
 **Временные ряды** ETS · SARIMA · STL · бэктест скользящим началом · индексы цен
 
-**NLP и LLM** PyTorch · TensorFlow · transformers · sentence-transformers · дообучение и квантизация LLM · BM25, гибридный поиск и кросс-энкодеры · оценка качества поиска и генерации
+**NLP и LLM** PyTorch · TensorFlow · transformers · datasets · accelerate · sentence-transformers · дообучение и квантизация LLM (bitsandbytes, auto-gptq) · BM25, гибридный поиск и кросс-энкодеры · оценка качества поиска и генерации (NDCG, BLEU, ROUGE) · lm-evaluation-harness · LlamaIndex · Haystack · spaCy · nltk · natasha · Rasa
 
-**Эконометрика и причинный вывод** МНК с диагностикой предпосылок · логит и пробит · CAPM · event study · разность разностей с фиксированными эффектами · matching · рандомизационный вывод · кластеризованные ошибки · поправки на множественность
+**Эконометрика и причинный вывод** МНК с диагностикой предпосылок (автокорреляция, гетероскедастичность, мультиколлинеарность) · проверка гипотез · гедоническая регрессия · линейная вероятностная модель и модель риска · логит и пробит · CAPM и бета · event study · разность разностей с фиксированными эффектами · matching · рандомизационный вывод и плацебо-тесты · кластеризованные ошибки · поправки на множественность (Холм, Бенджамини-Хохберг)
 
 **Финансы** DCF · мультипликаторы · фундаментальный и технический анализ
 
-**Данные и инфраструктура** PostgreSQL · ClickHouse · dbt · Airflow · FastAPI · Docker · GitHub Actions · Playwright · Qdrant · FAISS · Metabase · D3 · DVC · Excel
+**SQL** оконные функции · CTE · материализованные представления · индексы и `EXPLAIN ANALYZE` · статистические агрегаты
+
+**Данные и инфраструктура** PostgreSQL · ClickHouse · MongoDB · Neo4j · ArangoDB · dbt · Airflow · FastAPI · Docker · Docker Compose · GitHub Actions · pytest · locust · Playwright · BeautifulSoup · Qdrant · FAISS · Metabase · Yandex DataLens · D3 · DVC · S3 · Render · Telegram Bot API · GigaChat API · Git · Excel
 
 ---
 
