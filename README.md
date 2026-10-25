@@ -1,91 +1,91 @@
-## Наталия Гордеева
+## Nataliia Gordeeva
 
-**Прикладное машинное обучение и аналитика данных.**
+**Data analytics, econometrics and applied machine learning**
 
-Финансовый университет при Правительстве РФ: магистратура «Прикладная математика и информатика» по программе «Машинное обучение на текстах и графах» и бакалавриат «Экономика» по программе «Оценка бизнеса в цифровой экономике» — оба диплома с отличием.
+[Русская версия](README.ru.md)
 
-В ML — полный исследовательский цикл: от сбора и разметки корпуса до дообучения языковой модели с измеримыми результатами. Контрибьютор открытых фреймворков для оценки языковых моделей и построения RAG. Отдельно — шесть лет прикладной аналитической практики: эконометрическое моделирование, причинный вывод на рыночных данных, оценка бизнеса, анализ ценных бумаг.
+Financial University under the Government of the Russian Federation. BSc in Economics (Business Valuation in the Digital Economy) and MSc in Applied Mathematics and Computer Science (Machine Learning on Texts and Graphs), both with honours.
 
----
-
-### Чем занимаюсь
-
-**NLP и языковые модели.** Дообучение LLM, детекция и классификация текста, оценка качества генерации. Магистерская работа — гибридная трёхэтапная модель детекции и замены англицизмов в русскоязычных текстах: собственный корпус на 50 000+ единиц, XGBoost для детекции (F1 0.9884, ROC-AUC 0.999), дообученный Qwen2.5-1.5B-Instruct для перезаписи (BLEU 0.807, ROUGE ≈ 0.870).
-
-**Поиск и RAG.** Измеримое качество поиска: корпус, размеченный набор запросов, сравнение конфигураций на одних данных, доверительные интервалы, разбор провалов. Сейчас — поисковый слой по нормативным актам Банка России: шесть энкодеров, две нарезки, BM25, гибрид и кросс-энкодер по NDCG@10.
-
-**Эконометрика и финансы.** Регрессионный анализ с полной диагностикой предпосылок Гаусса—Маркова, проверка гипотез, прогнозирование с валидацией на контрольной выборке, модели бинарного выбора, CAPM и расчёт беты. Оценка бизнеса методом DCF с самостоятельным обоснованием ставок дисконтирования, сравнительный подход на мультипликаторах, фундаментальный и технический анализ акций.
-
-**Причинный вывод (causal inference) на рыночных данных.** Event study: market model, abnormal и cumulative abnormal returns (CAR). Difference-in-differences с контрольной группой по nearest-neighbor matching и формальной проверкой parallel trends. Randomization inference, placebo-тесты, clustered standard errors, поправки на множественность (Holm, Benjamini—Hochberg).
-
-**Данные и SQL.** Проектирование схем, ETL, аналитические витрины на PostgreSQL: оконные функции, оптимизация по плану запроса, дашборды.
-
-**Открытый код.** Контрибьютор фреймворков для оценки языковых моделей и RAG: четыре принятых pull request, ещё пять на ревью.
+Nearly six years of applied analytical practice in econometrics and financial analysis. In ML I have taken projects through the full cycle, from building a corpus to fine-tuning a language model with measured results. I currently run two live systems, a daily collection of the Moscow rental market and a search service over Bank of Russia regulations. Contributor to open-source LLM evaluation frameworks, 4 merged pull requests.
 
 ---
 
-### Вклад в открытые проекты
+### Featured repositories
 
-| Проект | Что это | Вклад |
-|---|---|---|
-| [EleutherAI/lm-evaluation-harness](https://github.com/EleutherAI/lm-evaluation-harness/pulls?q=author%3Anata2627) | Референсный фреймворк оценки языковых моделей | 2 PR приняты, 3 на ревью |
-| [comet-ml/opik](https://github.com/comet-ml/opik/pulls?q=author%3Anata2627) | Платформа оценки и трассировки LLM-приложений | 2 PR приняты |
-| [run-llama/llama_index](https://github.com/run-llama/llama_index/pulls?q=author%3Anata2627) | Фреймворк для RAG и документных агентов | 2 PR на ревью |
+**[msk-rent-market](https://github.com/nata2627/msk-rent-market)** · panel of the Moscow rental market · [live dashboard](https://nata2627.github.io/msk-rent-market/)
+Daily collection of long-term rental listings from CIAN since 22 Sep 2026, about 59 thousand listings and 586 thousand observations. The site returns at most 1,512 listings per query, so the search is split recursively into buckets and completeness is checked for each bucket every day. A watchdog checks the run every 20 minutes and reports eight types of failure to Telegram. In the first month 15 days were rescued by automatic restarts, and every incident ended with a new check in the code. Questions answered on the panel:
+- **Forecast.** Random walk, seasonal naive, ETS and SARIMA backtested on 140 months of Rosstat data with rolling origins. The selection rule was committed before the first run, and the random walk won (MAPE 1.92% against 2.70% for SARIMA)
+- **Rent index.** A hedonic index shows −0.49% over the month, while a chained index on the same listings shows −5.7% and measures listing ageing instead of the market
+- **Fair price.** CatBoost against hedonic regression with time-based and duplicate-group splits, MAPE 13.0% against 17.6%, 80% conformal intervals. Weekly retraining tracked in MLflow, served by the bot's `/price` command
+- **Price cuts.** Agencies cut prices 9 p.p. more often than owners, controls barely move the gap. Listings that cut leave the market 6-11% faster than similar ones. The pre-registered placebo turned out to be flawed and was fixed, and the estimate is reported as unstable
+- **Listing lifetime.** Median 14 days, Kaplan-Meier with late entry
+- **Pets.** Allowing pets does not change rent (−0.3% [−1.1; +0.6]), an explicit ban comes with a 2.8% discount
 
----
+dbt marts, duplicate linking across agencies, a D3 dashboard on GitHub Pages, 471 tests in GitHub Actions.
+`PostgreSQL` `dbt` `Playwright` `statsmodels` `CatBoost` `MLflow` `D3` `Docker`
 
-### Избранные репозитории
+**[ru-fin-rag](https://github.com/nata2627/ru-fin-rag)** · search service over Bank of Russia regulations · [live demo](https://ru-fin-rag.onrender.com)
+A corpus of 1,555 regulations and 62,606 chunks, refreshed by a scheduled nightly run. Retrieval quality is measured on 991 labelled queries. Hybrid search with cross-encoder reranking scores 0.704 NDCG@10 against 0.571 for BM25, p < 0.001, and a stemmer in BM25 tokenization added 0.087. FastAPI service deployed on the Render free tier, p50 470.6 ms and p95 669.3 ms measured from Moscow. Under load (locust) a single process sustains 140-165 requests per second with zero failures. Every query is logged as an event, with a 6-model dbt mart on top in ClickHouse. I compared vector stores (numpy, FAISS, Qdrant embedded and over the network) and int8 quantization, which costs 0.005 [0.001; 0.010] in quality. The Airflow DAG for the scheduled pipeline runs in a container in CI.
+`FastAPI` `BM25` `cross-encoder` `ClickHouse` `dbt` `Airflow` `Qdrant` `FAISS` `Docker`
 
-**[ru-fin-retrieval](https://github.com/nata2627/ru-fin-retrieval)** — поисковый слой RAG по нормативным актам Банка России и измерение его качества. В работе. Корпус, набор запросов (486 собрано, 258 размечено, из них 108 живых вопросов — по пунктам, которые регулятор называет сам), сравнение шести энкодеров, двух нарезок, BM25, гибрида и кросс-энкодера на одних данных по NDCG@10 с доверительными интервалами. Главное, что выяснилось: ни один готовый энкодер не обошёл BM25 — лучший даёт 0,515 против 0,529, и порядок определяется не размером модели. Отставание плотного поиска сначала выглядело ошибкой в схеме префиксов — проверено по коду, ошибки нет. Граница применимости названа прямо: первая таблица посчитана на 93% синтетических запросов и о живом вопросе почти ничего не говорит.
-`sentence-transformers` `BM25` `cross-encoder` `NDCG` `retrieval` `pytest` `CI`
+**[moex-index-effect](https://github.com/nata2627/moex-index-effect)** · index effect on the Moscow Exchange
+What happens to a stock's price and liquidity when it enters or leaves the IMOEX index. 42 events over 2022-2026, market model and cumulative abnormal returns, a control group via nearest-neighbour matching, difference-in-differences on liquidity with a formal parallel trends test, randomization inference on 1,000 placebo dates, Holm and Benjamini-Hochberg corrections. There is no classic index effect. Instead, prices decline steadily after inclusion, CAR −18.3% over 60 days, placebo p = 0.039. The sign holds across all 15 robustness checks, 39 tests.
+`pandas` `statsmodels` `event study` `difference-in-differences` `matching`
 
-**[moex-index-effect](https://github.com/nata2627/moex-index-effect)** — event study индексного эффекта на Московской бирже: что происходит с ценой и ликвидностью акции при включении в индекс IMOEX и исключении из него. 42 события за 2022–2026, market model и накопленная аномальная доходность (CAR), контрольная группа по nearest-neighbor matching, difference-in-differences по ликвидности, randomization inference на 1000 плацебо-дат, 15 проверок устойчивости (robustness), 39 тестов. Результат показан как есть, включая отрицательный: классического эффекта нет, зато после включения цена устойчиво снижается — CAR −18.3% за 60 дней, placebo p = 0.039.
-`pandas` `statsmodels` `event study` `difference-in-differences` `matching` `causal inference`
-
-**[moex-market-analytics](https://github.com/nata2627/moex-market-analytics)** — витрина аналитики российского фондового рынка на данных Московской биржи. Вся аналитика в SQL: оконные функции, CTE, материализованные представления, оптимизация по плану запроса. 46 бумаг, 47 672 строки котировок, архитектура `staging → core → marts`, дашборд в Metabase.
+**[moex-market-analytics](https://github.com/nata2627/moex-market-analytics)** · stock market data mart with all analytics in SQL
+46 Moscow Exchange index constituents, 47,672 price rows, `staging → core → marts` layers. Window functions, CTEs, materialized views, beta computed two independent ways and cross-checked. A composite index chosen with `EXPLAIN ANALYZE` cut a market snapshot query from 1.031 to 0.223 ms. Metabase dashboard.
 `PostgreSQL` `SQL` `Docker` `Metabase` `ETL`
 
-**[anglicism_detection](https://github.com/nata2627/anglicism_detection)** — гибридная модель детекции и замены англицизмов. Магистерская работа: парсинг корпуса, разметка, сравнение классических алгоритмов с трансформерами (RuRoBERTa-large, XLM-RoBERTa), дообучение Qwen, оценка по BLEU/ROUGE.
+**[anglicism_detection](https://github.com/nata2627/anglicism_detection)** · master's thesis
+Detecting and replacing anglicisms in Russian text. A custom corpus of 50,000+ units, XGBoost against RuRoBERTa-large and XLM-RoBERTa for detection (F1 0.988, ROC-AUC 0.999), fine-tuned Qwen2.5-1.5B-Instruct for rewriting (BLEU 0.807, ROUGE ≈ 0.870).
 `PyTorch` `transformers` `XGBoost` `natasha` `hydra`
 
-**[rbc.ru-category-classification](https://github.com/nata2627/rbc.ru-category-classification)** — классификация новостей РБК по семи рубрикам. Собственный парсер, 8142 статьи, сравнение четырёх архитектур. Лучшей оказалась самая простая: рубрика определяется словарём, а не порядком слов.
+**[rbc.ru-category-classification](https://github.com/nata2627/rbc.ru-category-classification)** · classifying RBC news into seven sections
+Custom scraper, 8,142 articles, four architectures. The simplest bag-of-words network came out best (79%), the recurrent one came last (70%). The section is determined by vocabulary, word order adds almost nothing.
 `TensorFlow` `scikit-learn` `BeautifulSoup`
 
-**[pabd24](https://github.com/nata2627/pabd24)** — учебный проект по прикладному анализу больших данных: полный ML-цикл от парсинга ЦИАН до сервиса предсказания цен. DVC, S3, Docker, тесты.
-`DVC` `Docker` `S3` `Flask`
-
-**[gbd](https://github.com/nata2627/gbd)** — машинное обучение на графах: метрики, эмбеддинги вершин, предсказание свойств вершин на `ogbn-arxiv` (Open Graph Benchmark).
-`Python` `networkx` `ogb`
-
-**[rasa_bot](https://github.com/nata2627/rasa_bot)** — диалоговый бот на Rasa: интенты, домен, кастомные actions, тесты.
-`Rasa` `Python`
+Also [pabd24](https://github.com/nata2627/pabd24) (course ML service for price prediction, DVC, S3, Docker), [gbd](https://github.com/nata2627/gbd) (machine learning on graphs, `ogbn-arxiv`), [rasa_bot](https://github.com/nata2627/rasa_bot), [youtube-subs](https://github.com/nata2627/youtube-subs).
 
 ---
 
-### Стек
+### Open-source contributions
 
-**Языки** Python · SQL · R · LaTeX
-
-**Данные и ML** pandas · numpy · statsmodels · scikit-learn · XGBoost · matplotlib · seaborn
-
-**Глубокое обучение и NLP** PyTorch · TensorFlow · transformers · datasets · accelerate · sentence-transformers · spaCy · nltk · natasha · дообучение и квантизация LLM
-
-**Эконометрика** МНК (OLS) · диагностика предпосылок Гаусса—Маркова · логит/пробит · проверка гипотез · корреляционный анализ · эластичности · CAPM и расчёт беты · event study · difference-in-differences с fixed effects · matching · randomization inference · clustered standard errors · multiple testing correction (Holm, Benjamini—Hochberg)
-
-**Финансы** DCF · мультипликаторы · оценка бизнеса · фундаментальный и технический анализ
-
-**Базы данных** PostgreSQL · оконные функции и рамки окна · CTE · материализованные представления · индексы и `EXPLAIN ANALYZE` · MongoDB · ArangoDB · графовые БД
-
-**Инструменты** Git · Jupyter · Docker · Docker Compose · Metabase · DVC · S3 · FastAPI · Excel
+| Project | What it is | Contribution |
+|---|---|---|
+| [EleutherAI/lm-evaluation-harness](https://github.com/EleutherAI/lm-evaluation-harness/pulls?q=author%3Anata2627) | reference framework for evaluating language models | 2 PRs merged, 3 in review |
+| [comet-ml/opik](https://github.com/comet-ml/opik/pulls?q=author%3Anata2627) | evaluation and tracing for LLM applications | 2 PRs merged |
+| [run-llama/llama_index](https://github.com/run-llama/llama_index/pulls?q=author%3Anata2627) | framework for RAG and document agents | 2 PRs in review |
 
 ---
 
-### Публикации
+### Stack
 
-- **Борьба со страховым мошенничеством в цифровой среде** — Самоуправление, 2023, № 1 (134) · [elibrary](https://elibrary.ru/item.asp?id=50470488)
-- **Анализ удельной цены предложения однокомнатных квартир на вторичном рынке г. Чебоксары** (в соавт. с С. Г. Стерником) — Российский экономический интернет-журнал, 2022, № 4 · [elibrary](https://elibrary.ru/item.asp?id=50243872)
-- **Анализ влияния пандемии COVID-19 на финансовые результаты компаний-ритейлеров** — Самоуправление, 2022, № 4 (132) · [elibrary](https://elibrary.ru/item.asp?id=49288478)
+**Languages** Python · SQL · R · LaTeX
+
+**Data and ML** pandas · numpy · statsmodels · scikit-learn · XGBoost · CatBoost · conformal prediction · MLflow · survival analysis · entity resolution
+
+**Time series** ETS · SARIMA · STL · rolling-origin backtesting · price indices
+
+**NLP and LLM** PyTorch · TensorFlow · transformers · sentence-transformers · LLM fine-tuning and quantization · BM25, hybrid search and cross-encoders · retrieval and generation evaluation
+
+**Econometrics and causal inference** OLS with assumption diagnostics · logit and probit · CAPM · event study · difference-in-differences with fixed effects · matching · randomization inference · clustered standard errors · multiple testing corrections
+
+**Finance** DCF · multiples · fundamental and technical analysis
+
+**Data and infrastructure** PostgreSQL · ClickHouse · dbt · Airflow · FastAPI · Docker · GitHub Actions · Playwright · Qdrant · FAISS · Metabase · D3 · DVC · Excel
 
 ---
 
-📫 gordeevanatalia04@gmail.com
+### Publications
+
+Peer-reviewed journals from the Russian Higher Attestation Commission (VAK) list, indexed in RSCI.
+
+- **Combating Insurance Fraud in the Digital Environment.** Samoupravlenie, 2023, No. 1 (134) · [elibrary](https://elibrary.ru/item.asp?id=50470488)
+- **Analysis of the Unit Asking Price of One-Room Apartments in the Secondary Housing Market of Cheboksary**, with S. G. Sternik. Russian Economic Online Journal, 2022, No. 4 · [elibrary](https://elibrary.ru/item.asp?id=50243872)
+- **The Impact of the COVID-19 Pandemic on the Financial Performance of Retail Companies.** Samoupravlenie, 2022, No. 4 (132) · [elibrary](https://elibrary.ru/item.asp?id=49288478)
+
+Titles are translated, the papers are in Russian.
+
+---
+
+📫 gordeevanatalia04@gmail.com · Telegram [@daisy_nata](https://t.me/daisy_nata)
