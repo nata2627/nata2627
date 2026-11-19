@@ -25,7 +25,7 @@ I build ML systems end to end, from collecting the data to a measured model and 
 **Search and answers over Bank of Russia regulations**<br>
 [Live service](https://ru-fin-rag.onrender.com) · [API](https://ru-fin-rag.onrender.com/docs) · [dataset](https://huggingface.co/datasets/nata2627/ru-fin-retrieval) and [reranker](https://huggingface.co/nata2627/ru-fin-reranker) on Hugging Face
 
-[![ru-fin-rag answer with citations](img/ru-fin-rag.png)](https://github.com/nata2627/ru-fin-rag)
+[![ru-fin-rag answer with citations](img/ru-fin-rag.png)](https://ru-fin-rag.onrender.com)
 
 - **Corpus.** 1,555 regulations and 62,606 chunks. A nightly GitHub Actions run downloads new acts, rebuilds the index and checks quality, 28 of 28 scheduled runs over 14 days with no manual start.
 - **Search quality.** 991 labelled queries, hybrid search with cross-encoder reranking scores 0.710 NDCG@10 against 0.571 for BM25 (p < 0.001), a stemmer in BM25 tokenization added 0.087.
@@ -111,7 +111,7 @@ Peer-reviewed journals from the Russian Higher Attestation Commission (VAK) list
 **Поиск и ответ по нормативным актам Банка России**<br>
 [Живой сервис](https://ru-fin-rag.onrender.com) · [API](https://ru-fin-rag.onrender.com/docs) · [набор](https://huggingface.co/datasets/nata2627/ru-fin-retrieval) и [переранжировщик](https://huggingface.co/nata2627/ru-fin-reranker) на Hugging Face
 
-[![Ответ ru-fin-rag с цитатами](img/ru-fin-rag.png)](https://github.com/nata2627/ru-fin-rag)
+[![Ответ ru-fin-rag с цитатами](img/ru-fin-rag.png)](https://ru-fin-rag.onrender.com)
 
 - **Корпус.** 1555 актов и 62 606 фрагментов. Ночной прогон на GitHub Actions докачивает новые акты, пересобирает индекс и проверяет качество, 28 плановых прогонов из 28 за 14 суток без ручного запуска.
 - **Качество поиска.** 991 размеченный запрос, гибрид с переранжированием кросс-энкодером дает 0,710 NDCG@10 против 0,571 у BM25 (p < 0,001), стеммер в токенизации BM25 прибавил 0,087.
