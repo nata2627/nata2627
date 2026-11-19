@@ -27,7 +27,7 @@ I build ML systems end to end, from collecting the data to a measured model and 
 
 [![ru-fin-rag answer with citations](img/ru-fin-rag.png)](https://ru-fin-rag.onrender.com)
 
-- **Corpus.** 1,555 regulations and 62,606 chunks. A nightly GitHub Actions run downloads new acts, rebuilds the index and checks quality, 28 of 28 scheduled runs over 14 days with no manual start.
+- **Corpus.** 1,555 regulations and 62,606 chunks. A nightly GitHub Actions run downloads new acts, rebuilds the index and checks quality, 42 scheduled runs in a row over 21 days with no manual start.
 - **Search quality.** 991 labelled queries, hybrid search with cross-encoder reranking scores 0.710 NDCG@10 against 0.571 for BM25 (p < 0.001), a stemmer in BM25 tokenization added 0.087.
 - **Service.** FastAPI on the Render free tier, p50 470.6 ms and p95 669.3 ms from Moscow, 140-165 requests per second per process under locust with zero failures, fits in 512 MB.
 - **Answers.** Excerpts with citations to the act and paragraph, refusal when the corpus has no support.
@@ -113,7 +113,7 @@ Peer-reviewed journals from the Russian Higher Attestation Commission (VAK) list
 
 [![Ответ ru-fin-rag с цитатами](img/ru-fin-rag.png)](https://ru-fin-rag.onrender.com)
 
-- **Корпус.** 1555 актов и 62 606 фрагментов. Ночной прогон на GitHub Actions докачивает новые акты, пересобирает индекс и проверяет качество, 28 плановых прогонов из 28 за 14 суток без ручного запуска.
+- **Корпус.** 1555 актов и 62 606 фрагментов. Ночной прогон на GitHub Actions докачивает новые акты, пересобирает индекс и проверяет качество, 42 плановых прогона подряд за 21 сутки без ручного запуска.
 - **Качество поиска.** 991 размеченный запрос, гибрид с переранжированием кросс-энкодером дает 0,710 NDCG@10 против 0,571 у BM25 (p < 0,001), стеммер в токенизации BM25 прибавил 0,087.
 - **Сервис.** FastAPI на бесплатном тарифе Render, из Москвы p50 470,6 мс и p95 669,3 мс, под нагрузкой (locust) один процесс держит 140-165 запросов в секунду без отказов, укладывается в 512 МБ.
 - **Ответ.** Выдержки с цитатами на акт и пункт, отказ, если опоры в корпусе нет.
