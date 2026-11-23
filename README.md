@@ -1,29 +1,30 @@
 <p align="center">
-  <a href="https://github.com/nata2627"><img src="https://img.shields.io/badge/English-F4A259?style=flat-square"></a>
-  <a href="https://github.com/nata2627/nata2627/blob/main/README.ru.md"><img src="https://img.shields.io/badge/%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9-555555?style=flat-square"></a>
-</p>
-
-<h1 align="center">Hi, I'm Nataliia Gordeeva 👋</h1>
-
-<p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=20&pause=1200&color=F4A259&center=true&vCenter=true&width=640&lines=ML+Engineer+%C2%B7+Data+Scientist;Search+and+RAG+over+Bank+of+Russia+regulations;Econometrics+and+causal+inference;Forecasting+and+price+indices" alt="ML Engineer · Data Scientist">
+  <a href="https://github.com/nata2627"><img src="https://img.shields.io/badge/English-2563EB?style=flat-square"></a>
+  <a href="https://github.com/nata2627/nata2627/blob/main/README.ru.md"><img src="https://img.shields.io/badge/%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9-C9D8EF?style=flat-square"></a>
 </p>
 
 <p align="center">
-  <a href="mailto:gordeevanatalia04@gmail.com"><img src="https://img.shields.io/badge/Email-gordeevanatalia04-EA4335?style=flat-square&logo=gmail&logoColor=white"></a>
-  <a href="https://t.me/daisy_nata"><img src="https://img.shields.io/badge/Telegram-%40daisy__nata-26A5E4?style=flat-square&logo=telegram&logoColor=white"></a>
-  <a href="https://huggingface.co/nata2627"><img src="https://img.shields.io/badge/Hugging%20Face-nata2627-FFD21E?style=flat-square&logo=huggingface&logoColor=black"></a>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="img/name-en-dark.svg">
+    <img src="img/name-en-light.svg" alt="Hi, I'm Nataliia Gordeeva" width="820">
+  </picture>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white">
-  <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white">
-  <img src="https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white">
-  <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white">
-  <img src="https://img.shields.io/badge/ClickHouse-FFCC01?style=for-the-badge&logo=clickhouse&logoColor=black">
-  <img src="https://img.shields.io/badge/Airflow-017CEE?style=for-the-badge&logo=apacheairflow&logoColor=white">
-  <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white">
-  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white">
+  <a href="mailto:gordeevanatalia04@gmail.com"><img src="https://img.shields.io/badge/Email-gordeevanatalia04-2563EB?style=flat-square&labelColor=1F4E8C&logo=gmail&logoColor=white"></a>
+  <a href="https://t.me/daisy_nata"><img src="https://img.shields.io/badge/Telegram-%40daisy__nata-0284C7?style=flat-square&labelColor=1F4E8C&logo=telegram&logoColor=white"></a>
+  <a href="https://huggingface.co/nata2627"><img src="https://img.shields.io/badge/Hugging%20Face-nata2627-4338CA?style=flat-square&labelColor=1F4E8C&logo=huggingface&logoColor=white"></a>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-EAF1FB?style=flat-square&logo=python&logoColor=1E3A8A">
+  <img src="https://img.shields.io/badge/PyTorch-EAF1FB?style=flat-square&logo=pytorch&logoColor=4338CA">
+  <img src="https://img.shields.io/badge/scikit--learn-EAF1FB?style=flat-square&logo=scikitlearn&logoColor=6D28D9">
+  <img src="https://img.shields.io/badge/PostgreSQL-EAF1FB?style=flat-square&logo=postgresql&logoColor=2563EB">
+  <img src="https://img.shields.io/badge/ClickHouse-EAF1FB?style=flat-square&logo=clickhouse&logoColor=0284C7">
+  <img src="https://img.shields.io/badge/Airflow-EAF1FB?style=flat-square&logo=apacheairflow&logoColor=0891B2">
+  <img src="https://img.shields.io/badge/FastAPI-EAF1FB?style=flat-square&logo=fastapi&logoColor=0D9488">
+  <img src="https://img.shields.io/badge/Docker-EAF1FB?style=flat-square&logo=docker&logoColor=1F4E8C">
 </p>
 
 ---
